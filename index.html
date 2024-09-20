@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite App</title>
+    <script type="module" crossorigin src="./assets/index-ChUzgx31.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B-YfB581.css">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+  <script>
+        var docEl = window.document.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = setFontSIze();
+
+    function setFontSIze() {
+        var clientWidth = docEl.clientWidth;
+        if (!clientWidth) return;
+
+        // if(clientWidth>750)
+        //     clientWidth=750;
+        if (10 * (clientWidth / 375) > 18) {//当根节点字体大小大于15PX时，屏幕宽度改为480px
+            clientWidth = 750;
+        }
+
+        docEl.style.fontSize = 50 * (clientWidth / 375) + 'px';
+    }
+    setFontSIze();
+
+    // 如果浏览器不支持addEventListener中止
+    // if (!window.addEventListener) return;
+    window.addEventListener(resizeEvt, recalc, false);
+    window.addEventListener('DOMContentLoaded', recalc, false);
+  </script>
+</html>
